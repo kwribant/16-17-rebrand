@@ -1,0 +1,34 @@
+{
+  "name": "16-17-rebrand",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwribant/16-17-rebrand.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwribant/16-17-rebrand/issues"
+  },
+  "homepage": "https://github.com/kwribant/16-17-rebrand",
+  "devDependencies": {
+    "@types/react": "^0.14.50",
+    "@types/react-dom": "^0.14.19",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.26.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "sass-loader": "^4.0.2",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^1.2.2",
+    "webpack": "^1.13.3"
+  }
+}
