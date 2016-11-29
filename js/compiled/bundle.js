@@ -54,6 +54,7 @@
 	"use strict";
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(3);
+	//import { Router, Route, Link } from 'react-router';
 	var test_component_1 = __webpack_require__(4);
 	ReactDOM.render(React.createElement(test_component_1.Test, {name: "Kyle", catchphrase: "Yas"}), document.getElementById("page-contents"));
 
