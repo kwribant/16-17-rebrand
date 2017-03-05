@@ -1,6 +1,9 @@
 import * as React from "react";
 
-export interface TestProps { name: string; catchphrase: string; }
+interface TestProps extends React.Props<Test>{
+  name: string;
+  catchphrase: string;
+}
 
 export class Test extends React.Component<TestProps, {}> {
   render() {
