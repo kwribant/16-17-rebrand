@@ -1,24 +1,24 @@
 // Sass
 // https://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = {
-    // ...
-    module: {
-        loaders: [
-            // ...
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css!sass')
-            }
-        ]
-    },
-    plugins: [
-        new ExtractTextPlugin('styles/css/styles.css', {
-            allChunks: true
-        })
-    ]
-}
+// module.exports = {
+//     // ...
+//     module: {
+//         loaders: [
+//             // ...
+//             {
+//                 test: /\.scss$/,
+//                 loader: ExtractTextPlugin.extract('css!sass')
+//             }
+//         ]
+//     },
+//     plugins: [
+//         new ExtractTextPlugin('styles/css/styles.css', {
+//             allChunks: true
+//         })
+//     ]
+// }
 
 // TSX
 // https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
@@ -29,7 +29,8 @@ module.exports = {
 
     output: {
         filename: "bundle.js",
-        path: __dirname + '/js/compiled'
+        path: '/js/compiled',
+        publicPath: '/js/compiled'
     },
 
     // Enable sourcemaps for debugging webpack's output.
