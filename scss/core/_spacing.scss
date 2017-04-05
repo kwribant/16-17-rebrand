@@ -1,0 +1,55 @@
+//
+// Spacing sets
+//
+$border-spacing-set: (
+  base: 45px,
+  medium: 55px,
+  large: 75px
+);
+
+//
+// Hero spacing set
+//
+$hero-spacing-set: (
+  base: 25px,
+  medium: 45px
+);
+
+//
+// Space getter
+//
+@function get-space($spacing-set-name, $breakpoint-size) {
+  // Check for approved space sets
+  @if $spacing-set-name == 'border' {
+    $spacing-set = $border-spacing-set;
+  }
+  @if $spacing-set-name == 'hero' {
+    $spacing-set = $hero-spacing-set;
+  }
+
+  @if $spacing-set {
+    @if map-has-key($spacing-set, $breakpoint-size) {
+      @return map-get($spacing-set, $breakpoint-size);
+    }
+  }
+}
+
+// add top and bottom margin to a specified container
+@mixin tb-margin($spacing-set-name, $breakpoint-size) {
+  margin: get-space($spacing-set-name, $breakpoint-size) 0;
+}
+
+// add all-around margin
+@mixin margin($spacing-set-name, $breakpoint-size) {
+  margin: get-space($spacing-set-name, $breakpoint-size);
+}
+
+// add top and bottom padding to a specified container
+@mixin tb-padding($spacing-set-name, $breakpoint-size) {
+  padding: get-space($spacing-set-name, $breakpoint-size) 0;
+}
+
+// add all-around padding
+@mixin padding($spacing-set-name, $breakpoint-size) {
+  padding: get-space($spacing-set-name, $breakpoint-size);
+}

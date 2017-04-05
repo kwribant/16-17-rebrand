@@ -1,0 +1,13 @@
+//
+// Path management
+//
+$base-path: "todo://";
+
+@function path($stub) {
+  @return '#{$base-path}/#{$stub}';
+}
+
+@function path-url($stub) {
+  $asset-path: path($base-path, $stub);
+  @return 'url(#{$asset-path})';
+}

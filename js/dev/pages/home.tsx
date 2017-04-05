@@ -10,8 +10,6 @@ export class HomePage extends React.Component<HomePageProps, {}> {
   render() {
     return (
       <div>
-        <Link to="/dropbox-business-redesign">Dropbox Business redesign</Link>
-
         <p>Homepage</p>
       </div>
     );

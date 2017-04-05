@@ -1,0 +1,61 @@
+//
+// Reset vals
+//
+
+@mixin reset {
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    position: relative;
+    background-color: #000;
+    margin: 0;
+    min-height: 100%;
+
+    // INCLUDE TYPE BASE HERE
+    // &.type--atlas {
+    //   @include type(arbor);
+    // }
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-button {
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+}
+
+@mixin reset-img($width, $height: auto) {
+  width: $width;
+  height: $height;
+  max-width: 100%;
+  max-height: 100%;
+}

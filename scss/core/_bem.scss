@@ -1,0 +1,21 @@
+//
+// Enforce BEM naming conventions via helpers
+//
+
+@mixin block($block) {
+    .#{$element} {
+        @content;
+    }
+}
+
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}

@@ -1,0 +1,41 @@
+// Typography setter, mixins and classes based on breakpoints
+// =============================================================================
+
+//
+// Headlines
+//
+$headline-set: (
+  h1: (
+
+  )
+)
+
+
+//
+// Body copy
+//
+
+@mixin type($type-name, $type-property: null) {
+    @if map-has-key($-arbor-type, $type-name) {
+      $type-group: map-get($-arbor-type, $type-name);
+      @each $breakpoint-name, $type-properties in $type-group {
+        @include breakpoint($breakpoint-name) {
+          @each $property, $value in $type-properties {
+            @if not $type-property or $type-property == $property {
+                #{$property}: #{$value};
+            }
+          }
+        }
+      }
+    } @else {
+        @warn "No #{$type-name} found in #{$-arbor-type}.";
+    }
+}
+
+@mixin arbor-type($prefix: 'type--') {
+  @each $type-name, $type-group in $-arbor-type {
+    .#{$prefix}#{$type-name} {
+      @include type($type-name);
+    }
+  }
+}
