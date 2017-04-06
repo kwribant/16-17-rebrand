@@ -1,7 +1,6 @@
 //
-// Enforce BEM naming conventions via helpers
+// BEM enforcement
 //
-
 @mixin block($block) {
     .#{$element} {
         @content;

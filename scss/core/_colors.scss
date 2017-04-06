@@ -23,7 +23,6 @@ $color-set: (
     $color: map-get($color-set, $color-name);
     @return rgb($color);
   } else {
-    @warn "Swatch: #{$color-name} is not a defined color.";
-    @return $color;
+    @error "Color: #{$color-name} is not a defined color.";
   }
 }

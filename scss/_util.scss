@@ -4,63 +4,12 @@
 @import "core/bem";
 @import "core/breakpoints";
 @import "core/functions";
-@import "core/grid"; // TODO: build based on 12 col grid
-@import "core/reset"; // Not done
+@import "core/grid";
+@import "core/reset";
 @import "core/spacing";
 @import "core/colors";
-@import "core/type"; // Not done
+@import "core/type";
 
 //
 // Components
 //
-
-
-
-
-//
-// Default Settings
-//
-$container-max-width: 990px;
-
-//
-// Breakpoints
-//
-@include breakpoint-set(medium, 736px);
-@include breakpoint-set(large, 1024px);
-
-//
-// Colors
-//
-@include swatch-set('dark-gray', #000000);
-@include swatch-set('light-gray', #000000);
-@include swatch-set('blush', #000000);
-@include swatch-set('mustard', #000000);
-
-//
-// Typography
-//
-
-// Base
-@include type-set(arbor, base, (font-family: '"AtlasGrotesk", "Open Sans", sans-serif', font-size: 16px, line-height: 1.65, font-weight: 300));
-
-// Headlines
-@include type-set(title-1, base, (font-size: 39px, line-height: 1.45, font-weight: 100, margin: 2em 0 0, padding: 0, color: swatch('ink')));
-@include type-set(title-1, medium, (font-size: 49px));
-
-@include type-set(title-2, base, (font-size: 31px, line-height: 1.45, font-weight: 100, margin: 2em 0 0, padding: 0, color: swatch('ink')));
-@include type-set(title-2, medium, (font-size: 39px));
-
-@include type-set(title-3, base, (font-size: 25px, line-height: 1.45, font-weight: 100, margin: 2em 0 0, padding: 0, color: swatch('ink')));
-@include type-set(title-3, medium, (font-size: 31px));
-
-@include type-set(title-4, base, (font-size: 20px, line-height: 1.45, font-weight: 100, margin: 2em 0 0, padding: 0, color: swatch('ink')));
-@include type-set(title-4, medium, (font-size: 25px));
-
-@include type-set(title-5, base, (font-size: 20px, line-height: 1.65, font-weight: 300, margin: 2em 0 0, padding: 0, color: swatch('ink')));
-
-// Body copy
-@include type-set(copy-large, base, (font-size: 20px, line-height: 1.65, font-weight: 400, margin: 1.5em 0 3px, padding: 0, color: swatch('stone')));
-@include type-set(copy-standard, base, (font-size: 16px, line-height: 1.65, font-weight: 300, margin: 1.5em 0 3px, padding: 0, color: swatch('stone')));
-@include type-set(copy-small, base, (font-size: 14px, line-height: 1.65, font-weight: 400, margin: 1.5em 0 3px, padding: 0, color: swatch('stone')));
-@include type-set(copy-mini, base, (font-size: 13px, line-height: 1.65, font-weight: 400, margin: 1.5em 0 3px, padding: 0, color: swatch('stone')));
-@include type-set(first, base, (margin-top: 0));

@@ -1,7 +1,6 @@
 //
-// Reset vals
+// Reset
 //
-
 @mixin reset {
   html {
     box-sizing: border-box;
@@ -17,18 +16,12 @@
 
   body {
     position: relative;
-    background-color: #000;
+    // background-color: #000;
     margin: 0;
     min-height: 100%;
-
-    // INCLUDE TYPE BASE HERE
-    // &.type--atlas {
-    //   @include type(arbor);
-    // }
   }
 
   a {
-    color: #000;
     text-decoration: none;
 
     &:hover {

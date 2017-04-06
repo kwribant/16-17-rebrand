@@ -1,41 +1,86 @@
-// Typography setter, mixins and classes based on breakpoints
-// =============================================================================
+//
+// Font fam
+//
+$font-family: "Karla", sans-serif;
 
 //
-// Headlines
+// Headline set
 //
 $headline-set: (
   h1: (
-
+    base: (
+      size: 25px,
+      lineHeight: 37px,
+      weight: 300
+    ),
+    medium: (
+      size: 31px,
+      lineHeight: 46px
+    ),
+  ),
+  h2: (
+    base: (
+      size: 20px,
+      lineHeight: 32px,
+      weight: 300
+    ),
+    medium: (
+      size: 25px,
+      lineHeight: 37px
+    ),
+  ),
+  h3: (
+    base: (
+      size: 16px,
+      lineHeight: 26px,
+      weight: 600
+    )
   )
-)
-
+);
 
 //
-// Body copy
+// Body copy set
 //
+$body-copy-set: (
+  body1: (
+    base: (
+      size: 16px,
+      lineHeight: 26px,
+      weight: 300
+    )
+  ),
+  body2: (
+    base: (
+      size: 14px,
+      lineHeight: 24px,
+      weight: 300
+    )
+  )
+);
 
-@mixin type($type-name, $type-property: null) {
-    @if map-has-key($-arbor-type, $type-name) {
-      $type-group: map-get($-arbor-type, $type-name);
-      @each $breakpoint-name, $type-properties in $type-group {
-        @include breakpoint($breakpoint-name) {
-          @each $property, $value in $type-properties {
-            @if not $type-property or $type-property == $property {
-                #{$property}: #{$value};
-            }
-          }
+//
+// Get dat type
+//
+@mixin type($copy-set-name, $copy-set-child) {
+  @if $copy-set-name == "headline" {
+    $copy-set = $headline-set;
+  }
+  @if $copy-set-name == "body" {
+    $copy-set = $body-copy-set;
+  }
+
+  @if map-has-key($copy-set, $copy-set-child) {
+    // now we have access to the different breakpoint (base, and medium)
+    $breakpoint-groups: map-get($copy-set, $copy-set-child);
+
+    @each $breakpoint-name, $type-properties in $breakpoint-groups {
+      @include breakpoint($breakpoint-name) {
+        @each $property, $value in $type-properties {
+          #{$property}: #{$value};
         }
       }
-    } @else {
-        @warn "No #{$type-name} found in #{$-arbor-type}.";
     }
-}
-
-@mixin arbor-type($prefix: 'type--') {
-  @each $type-name, $type-group in $-arbor-type {
-    .#{$prefix}#{$type-name} {
-      @include type($type-name);
-    }
+  } @else {
+    @error "#{$copy-set} or #{$copy-set-child} does not exist"
   }
 }
