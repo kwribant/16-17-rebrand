@@ -10,6 +10,9 @@ import {
 import { HomePage } from "./pages/home";
 import { PortfolioPiecePage } from "./pages/portfolio-piece";
 
+// Components
+import { Footer } from "./components/footer";
+
 
 ReactDOM.render(
   <Router>
@@ -20,7 +23,7 @@ ReactDOM.render(
       {/* End routes */}
 
       {/* Start persistent footer */}
-      <p>Persistent footer</p>
+      <Footer />
       {/* End persistent footer */}
     </main>
   </Router>,
