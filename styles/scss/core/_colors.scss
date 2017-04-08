@@ -1,0 +1,28 @@
+//
+// Color set
+//
+$color-set: (
+    // Grays
+    darkestGray: #333333,
+    darkGray: #AAAAAA,
+    lightGray: #F2F2F2,
+    lightestGray: #FAFAFA,
+
+    // Accents
+    blush: #F2DDDC,
+    mustard: #D9C900,
+);
+
+//
+// Color getter
+//
+@function color($color-name) {
+    $color: #FAFAFA;
+
+    @if map-has-key($color-set, $color-name) {
+        $color: map-get($color-set, $color-name);
+        @return rgba($color, 1);
+    } @else {
+        @error "Color: #{$color-name} is not a defined color.";
+    }
+}

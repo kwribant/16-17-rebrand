@@ -1,0 +1,47 @@
+//
+// Grid set
+//
+$total-col: 12;
+
+$grid-set: (
+  base: (
+    viewport: 320,
+    gutter: 10,
+    column: 17
+  ),
+  medium: (
+    viewport: 768,
+    gutter: 19,
+    column: 45
+  ),
+  large: (
+    viewport: 1024,
+    gutter: 25,
+    column: 60
+  )
+);
+
+//
+// Gutter helper
+//
+@mixin gutter($val) {
+  margin-left: $val;
+  margin-right: $val;
+}
+
+//
+// Element width helper
+//
+@mixin grid-item($columns) {
+  @each $breakpoint-name, $grid-properties in $grid-set {
+    $gutterWidth: map-get($grid-properties, "gutter");
+    $columnWidth: map-get($grid-properties, "column");
+    $viewportWidth: map-get($grid-properties, "viewport");
+
+    $totalColumnWidth: $columns * $columnWidth;
+    @include breakpoint($breakpoint-name) {
+      width: percentage($totalColumnWidth / $viewportWidth);
+      @include gutter(percentage($gutterWidth / $viewportWidth))
+    }
+  }
+}

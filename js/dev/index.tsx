@@ -13,6 +13,9 @@ import { PortfolioPiecePage } from "./pages/portfolio-piece";
 // Components
 import { Footer } from "./components/footer";
 
+// Styles
+import "../../styles/scss/styles.scss";
+
 
 ReactDOM.render(
   <Router>

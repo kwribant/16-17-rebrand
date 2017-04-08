@@ -1,0 +1,24 @@
+.footer {
+    background: color(blush);
+
+    @include element('width-container') {
+        max-width: 1024px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @include element('link-list') {
+        @include reset-list();
+        display: flex;
+    }
+
+    @include element('link-list-item') {
+        display: flex;
+        align-items: center;
+    }
+
+    // @include element('copyright') {
+    //     @include type("body", "body2");
+    // }
+}

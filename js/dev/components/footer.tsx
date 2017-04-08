@@ -17,7 +17,7 @@ export class Footer extends React.Component<{}, {}> {
 
     socialContent.forEach((socialItem, index) => {
       const listItem = (
-        <li key={index}>
+        <li key={index} className="footer__link-list-item">
           <a href={socialItem.href} target="_blank">
             {socialItem.copy}
           </a>
@@ -28,7 +28,7 @@ export class Footer extends React.Component<{}, {}> {
     });
 
     return (
-      <ul>
+      <ul className="footer__link-list">
         {socialList}
       </ul>
     )
@@ -38,16 +38,18 @@ export class Footer extends React.Component<{}, {}> {
     const date = new Date().getFullYear();
 
     return (
-      <p>© { date } Kyle Ribant</p>
+      <p className="footer__copyright">© { date } Kyle Ribant</p>
     )
   }
 
   render() {
     return (
-      <footer>
-        {this.renderSocialList()}
+      <footer className="footer"> {/* Footer is full width */}
+        <div className="footer__width-container"> {/*Div keeps the max width of 1024*/}
+          {this.renderSocialList()}
 
-        {this.renderCopyright()}
+          {this.renderCopyright()}
+        </div>
       </footer>
     );
   }
