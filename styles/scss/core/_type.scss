@@ -4,56 +4,57 @@
 $font-family: "Karla", sans-serif;
 
 //
-// Headline set
+// Weights
 //
-$headline-set: (
+$normal-weight: 300;
+$heavy-weight: 600;
+
+//
+// Line heights
+//
+$headlineLineHeight: 1.5;
+$bodyLineHeight: 1.65;
+
+$copy-set: (
   h1: (
     base: (
-      size: 25px,
-      lineHeight: 37px,
-      weight: 300
+      font-size: 25px,
+      line-height: $headlineLineHeight,
+      font-weight: $normal-weight
     ),
     medium: (
-      size: 31px,
-      lineHeight: 46px
+      font-size: 31px,
     ),
   ),
   h2: (
     base: (
-      size: 20px,
-      lineHeight: 32px,
-      weight: 300
+      font-size: 20px,
+      line-height: $headlineLineHeight,
+      font-weight: $normal-weight
     ),
     medium: (
-      size: 25px,
-      lineHeight: 37px
+      font-size: 25px,
     ),
   ),
   h3: (
     base: (
-      size: 16px,
-      lineHeight: 26px,
-      weight: 600
+      font-size: 16px,
+      line-height: $headlineLineHeight,
+      weight: $heavy-weight
     )
-  )
-);
-
-//
-// Body copy set
-//
-$body-copy-set: (
+  ),
   body1: (
     base: (
-      size: 16px,
-      lineHeight: 26px,
-      weight: 300
+      font-size: 16px,
+      line-height: $bodyLineHeight,
+      font-weight: $normal-weight
     )
   ),
   body2: (
     base: (
-      size: 14px,
-      lineHeight: 24px,
-      weight: 300
+      font-size: 14px,
+      line-height: $bodyLineHeight,
+      font-weight: $normal-weight
     )
   )
 );
@@ -61,26 +62,44 @@ $body-copy-set: (
 //
 // Get dat type
 //
-@mixin type($copy-set-name, $copy-set-child) {
-  @if $copy-set-name == "headline" {
-    $copy-set: $headline-set;
-  }
-  @if $copy-set-name == "body" {
-    $copy-set: $body-copy-set;
-  }
+@mixin type($copy-set-child) {
+    font-family: $font-family;
+    @if map-has-key($copy-set, $copy-set-child) {
+        // now we have access to the different breakpoint (base, and medium)
+        $breakpoint-groups: map-get($copy-set, $copy-set-child);
 
-  @if map-has-key($copy-set, $copy-set-child) {
-    // now we have access to the different breakpoint (base, and medium)
-    $breakpoint-groups: map-get($copy-set, $copy-set-child);
-
-    @each $breakpoint-name, $type-properties in $breakpoint-groups {
-      @include breakpoint($breakpoint-name) {
-        @each $property, $value in $type-properties {
-          #{$property}: #{$value};
+        @each $breakpoint-name, $type-properties in $breakpoint-groups {
+            @include breakpoint($breakpoint-name) {
+                @each $property, $value in $type-properties {
+                    #{$property}: #{$value};
+                }
+            }
         }
-      }
+    } @else {
+        @error "#{$copy-set} or #{$copy-set-child} does not exist"
     }
-  } @else {
-    @error "#{$copy-set} or #{$copy-set-child} does not exist"
-  }
+};
+
+//
+// Link styles
+//
+@mixin link() {
+    color: color('darkest-gray');
+
+    &::after {
+        width: 100%;
+        content: "";
+        border-bottom: 1px solid color('darkest-gray');
+        display: block;
+        position: relative;
+        bottom: 2px;
+    }
+
+    &:hover {
+        color: color('dark-gray');
+
+        &::after {
+            border-color: color('dark-gray');
+        }
+    }
 }

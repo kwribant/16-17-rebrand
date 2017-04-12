@@ -34,14 +34,19 @@ $grid-set: (
 //
 @mixin grid-item($columns) {
   @each $breakpoint-name, $grid-properties in $grid-set {
+    // Get breakpoint-specific ratio vals
     $gutterWidth: map-get($grid-properties, "gutter");
     $columnWidth: map-get($grid-properties, "column");
     $viewportWidth: map-get($grid-properties, "viewport");
 
-    $totalColumnWidth: $columns * $columnWidth;
+    // Define the total width (combo of col + gutter vals)
+    $guttersToAddToWidth: ($columns - 1);
+    $totalColumnWidth: ($columns * $columnWidth) + ($guttersToAddToWidth * $gutterWidth);
+
+    // Make it so
     @include breakpoint($breakpoint-name) {
       width: percentage($totalColumnWidth / $viewportWidth);
-      @include gutter(percentage($gutterWidth / $viewportWidth))
+      @include gutter(percentage(($gutterWidth / 2) / $viewportWidth)) // We divide $gutterWidth for even spacing
     }
   }
 }

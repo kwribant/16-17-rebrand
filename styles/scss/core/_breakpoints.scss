@@ -9,8 +9,8 @@ $breakpoints: (
 //
 // Breakpoint function
 //
-@mixin breakpoint($breakpoint-name: 0) {
-  $min-width: map-get($breakpoints, $breakpoint-name) or $breakpoint-name;
+@mixin breakpoint($breakpoint-name) {
+  $min-width: map-get($breakpoints, $breakpoint-name) or 0;
 
   @if $min-width > 0 {
     @media only screen and (min-width: #{$min-width}) {

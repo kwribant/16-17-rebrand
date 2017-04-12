@@ -1,9 +1,17 @@
 .footer {
+    display: flex;
+    height: 70px;
     background: color(blush);
 
-    @include element('width-container') {
+    @include element('static-width-container') {
         max-width: 1024px;
+        width: 100%;
         margin: 0 auto;
+        display: flex;
+    }
+
+    @include element('content-container') {
+        @include grid-item(12);
         display: flex;
         justify-content: space-between;
     }
@@ -16,9 +24,20 @@
     @include element('link-list-item') {
         display: flex;
         align-items: center;
+        margin-left: 25px;
+
+        &:first-child {
+            margin-left: 0;
+        }
     }
 
-    // @include element('copyright') {
-    //     @include type("body", "body2");
-    // }
+    @include element('copyright') {
+        @include type(body2);
+        align-self: center;
+    }
+
+    @include element('link') {
+        @include type(body2);
+        @include link();
+    }
 }
