@@ -1,0 +1,74 @@
+@include block('projects') {
+    @include element('width-container') {
+        @include static-width();
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @include element('headline') {
+        @include type('h1');
+        @include b-margin('h1');
+        @include grid-item(10);
+        color: color('mustard');
+
+        @include breakpoint('medium') {
+            @include grid-item(12);
+        }
+    }
+}
+
+@include block('projects-list') {
+    @include reset-list();
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint('medium') {
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
+
+    @include element('item') {
+        margin-top: 20px;
+        // @include grid-item(10);
+        @include grid-item(10);
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        @include breakpoint('medium') {
+            @include grid-item(6);
+
+            &:nth-child(2) {
+                margin-top: 0;
+            }
+        }
+
+
+        &:hover { // TODO: refactor
+            .projects-list {
+                &__headline,
+                &__copy {
+                    color: color('mustard');
+                }
+            }
+        }
+    }
+
+    @include element('headline') {
+        @include type('body1');
+        @include b-margin('body');
+        color: color('darkest-gray');
+    }
+
+    @include element('copy') {
+        @include type('body2');
+        color: color('dark-gray');
+    }
+}

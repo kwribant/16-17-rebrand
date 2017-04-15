@@ -3,14 +3,12 @@
     height: 70px;
     background: color(blush);
 
-    @include element('static-width-container') {
-        max-width: 1024px;
-        width: 100%;
-        margin: 0 auto;
+    @include element('width-container') {
+        @include static-width();
         display: flex;
     }
 
-    @include element('content-container') {
+    @include element('content') {
         @include grid-item(12);
         display: flex;
         justify-content: space-between;
@@ -31,13 +29,13 @@
         }
     }
 
-    @include element('copyright') {
-        @include type(body2);
-        align-self: center;
-    }
-
     @include element('link') {
         @include type(body2);
         @include link();
+    }
+
+    @include element('copyright') {
+        @include type(body2);
+        align-self: center;
     }
 }

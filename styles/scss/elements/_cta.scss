@@ -1,0 +1,35 @@
+@include block('cta') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include element('copy') {
+        @include type('h2');
+        color: color('darkest-gray');
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    @include element('link-copy') {
+        @include type('body1');
+        color: color('darkest-gray');
+        margin-top: 10px;
+    }
+
+    @include element('link') {
+        @include link();
+        display: inline-block;
+    }
+
+    @include modifier('small') {
+        @include block('cta') {
+            @include element('copy') {
+                @include type('body1')
+            }
+
+            @include element('link-copy') {
+                @include type('body2');
+            }
+        }
+    }
+}

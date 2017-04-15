@@ -16,12 +16,12 @@ $color-set: (
 //
 // Color getter
 //
-@function color($color-name) {
+@function color($color-name, $opacity: 1) {
     $color: #FAFAFA;
 
     @if map-has-key($color-set, $color-name) {
         $color: map-get($color-set, $color-name);
-        @return rgba($color, 1);
+        @return rgba($color, $opacity);
     } @else {
         @error "Color: #{$color-name} is not a defined color.";
     }

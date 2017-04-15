@@ -1,0 +1,96 @@
+@include block('experience') {
+    position: relative;
+
+    @include element('width-container') {
+        @include static-width();
+        display: flex;
+        z-index: 1;
+        position: relative;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint('medium') {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
+}
+
+@include block('experience-background') {
+    position: absolute;
+
+    @include breakpoint('medium') {
+        width: 100%;
+        height: 60%;
+        top: 25%;
+        background-image: url('/images/experience.jpg');
+        background-size: cover;
+        background-position: 50%;
+    }
+
+    @include element('width-container') {
+        @include static-width();
+        height: 100%;
+    }
+
+    @include element('content') {
+        @include grid-item(12);
+        border-left: 1px dashed color('blush');
+        border-right: 1px dashed color('blush');
+        height: 25%;
+        top: percentage((1-.25) / 2);
+        position: relative;
+    }
+}
+
+@include block('experience-section') {
+    @include element('list-container') {
+        @include grid-item(10);
+        @include t-margin('border');
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        @include breakpoint('medium') {
+            @include grid-item(4);
+            margin-top: 0;
+        }
+    }
+
+    @include element('headline') {
+        @include type('h1');
+        @include b-margin('h1');
+        color: color('mustard');
+    }
+}
+
+@include block('experience-list') {
+    background: color('light-gray');
+    @include reset-list();
+    padding: 20px;
+
+    @include element('item') {
+        margin-top: 20px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    @include element('headline') {
+        @include type('h4');
+        @include b-margin('body');
+    }
+
+    @include element('meta') {
+        @include type('body1');
+        @include b-margin('body');
+    }
+
+    @include element('description') {
+        @include type('body2');
+        @include b-margin('body');
+    }
+}

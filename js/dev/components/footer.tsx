@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { WidthContainer } from "./width-container";
+
 export class Footer extends React.Component<{}, {}> {
   private renderSocialList = () => {
     const socialContent = [
@@ -45,13 +47,13 @@ export class Footer extends React.Component<{}, {}> {
   render() {
     return (
       <footer className="footer"> {/* Footer is full width */}
-        <div className="footer__static-width-container"> {/*Div keeps the max width of 1024*/}
-          <div className="footer__content-container">
+        <WidthContainer elementClassName="footer">
+          <div className="footer__content">
             {this.renderSocialList()}
 
             {this.renderCopyright()}
           </div>
-        </div>
+        </WidthContainer>
       </footer>
     );
   }

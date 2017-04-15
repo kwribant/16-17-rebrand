@@ -17,7 +17,16 @@
 //
 // Components
 //
+@import "elements/hero";
+@import "elements/logo";
 @import "elements/footer";
+@import "elements/button";
+@import "elements/cta";
+@import "elements/callout-box";
+@import "elements/spacer";
+@import "elements/project-list";
+@import "elements/experience";
+@import "elements/footer-cta";
 
 // Global calls
 @include reset();

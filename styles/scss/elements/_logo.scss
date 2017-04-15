@@ -1,0 +1,27 @@
+%LOGOSTYLE {
+    @include type('body2');
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include element('name') {
+        @extend %LOGOSTYLE;
+    }
+
+    @include element('profession') {
+        @extend %LOGOSTYLE;
+    }
+
+    &__name {
+        color: color('darkest-gray');
+        margin-bottom: 5px; // TODO: put into variable
+    }
+
+    &__profession {
+        color: color('dark-gray');
+    }
+}

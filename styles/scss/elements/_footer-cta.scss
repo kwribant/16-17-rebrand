@@ -1,0 +1,22 @@
+@include block('footer-cta') {
+    @include b-margin('border');
+
+    @include element('width-container') {
+        @include static-width();
+        display: flex;
+        justify-content: center;
+
+    }
+
+    @include element('content') {
+        @include grid-item(10);
+
+        @include breakpoint('medium') {
+            @include grid-item(5);
+        }
+
+        @include breakpoint('large') {
+            @include grid-item(4);
+        }
+    }
+}

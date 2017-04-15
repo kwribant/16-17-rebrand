@@ -1,0 +1,19 @@
+@include block('spacer') {
+    display: block;
+
+    @include element('width-container') {
+        @include static-width();
+        @include tb-padding('border');
+        display: flex;
+        justify-content: center;
+    }
+
+    @include element('line') {
+        @include grid-item(6);
+        border-top: 1px solid color('blush');
+
+        @include breakpoint('small') {
+            @include grid-item(2);
+        }
+    }
+}

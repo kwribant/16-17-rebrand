@@ -2,7 +2,7 @@
 // BEM enforcement
 //
 @mixin block($block) {
-    .#{$element} {
+    .#{$block} {
         @content;
     }
 }

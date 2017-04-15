@@ -1,0 +1,52 @@
+%BOX {
+    border: 1px solid color('darkest-gray');
+    width: 100%;
+    display: inline-block;
+}
+
+@include block('button') {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+
+    &:hover {
+        .button__copy-box {
+            background: color('mustard');
+        }
+
+        .button__overlap-box {
+            background: color('blush');
+        }
+    }
+
+    @include modifier('small') {
+        width: 145px;
+        
+        @include block('button') {
+            @include element('copy-box') {
+                @include type('body2');
+                padding: 7px 0;
+            }
+        }
+    }
+
+    @include element('copy-box') {
+        @extend %BOX;
+        @include type('h3');
+        background: color('blush');
+        color: color('darkest-gray');
+        z-index: 1;
+        position: relative;
+        text-align: center;
+        padding: 10px;
+    }
+
+    @include element('overlap-box') {
+        @extend %BOX;
+        position: absolute;
+        height: 100%;
+        background: color('mustard');
+        top: 5px;
+        left: 5px;
+    }
+}

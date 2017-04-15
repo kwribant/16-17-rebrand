@@ -12,6 +12,7 @@ import { PortfolioPiecePage } from "./pages/portfolio-piece";
 
 // Components
 import { Footer } from "./components/footer";
+import { FooterCTA } from "./components/footer-cta";
 
 // Styles
 import "../../styles/scss/styles.scss";
@@ -24,6 +25,8 @@ ReactDOM.render(
       <Route exact path="/" component={ HomePage } />
       <Route path="/:portfolioPiece" component={ PortfolioPiecePage }/>
       {/* End routes */}
+
+      <FooterCTA />
 
       {/* Start persistent footer */}
       <Footer />

@@ -1,0 +1,87 @@
+@include block('hero') {
+    position: relative;
+
+    @include element('width-container') {
+        @include static-width();
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    @include element('content') {
+        @include grid-item(10);
+        @include tb-padding('hero');
+        background: color('light-gray');
+
+        @include breakpoint('small') {
+            // Using a static width to maintain integrity of design
+            width: 240px;
+        }
+
+        @include breakpoint('medium') {
+            // Using a static width to maintain integrity of design
+            width: 315px;
+        }
+    }
+
+    @include element('headline') {
+        @include type('h1');
+        @include tb-padding('hero');
+        color: color('mustard');
+        text-align: center;
+
+        @include breakpoint('small') {
+            $hero-width: 1.5;
+            width: percentage($hero-width);
+            margin-left: -(percentage(($hero-width - 1) / 2));
+        }
+    }
+
+    @include block('cta') {
+        padding: 0 20px;
+
+        @include breakpoint('medium') {
+            padding: 0 50px;
+        }
+    }
+}
+
+@include block('hero-background') {
+    @include element('container') {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    @include element('width-container') {
+        @include static-width();
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    @include element('content') {
+        @include grid-item(12);
+        margin: 0 auto;
+        height: 100%;
+        position: relative;
+    }
+
+    @include element('section') {
+        width: 100%;
+        position: relative;
+
+        @include modifier('main') {
+            background-image: url('/images/hero.jpg');
+            height: 80%;
+            background-size: cover;
+            background-position: 50% 85%;
+        }
+
+        @include modifier('color') {
+            height: 20%;
+        }
+    }
+}

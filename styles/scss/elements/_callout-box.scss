@@ -1,0 +1,23 @@
+@include block('callout-text') {
+    @include type('h2');
+    color: color('darkest-gray', .75);
+    background: color('blush');
+    display: none;
+    position: absolute;
+    width: 145px;
+    text-align: center;
+    padding: 9px 0;
+    bottom: -27px;
+
+    &:nth-child(1) {
+        right: 0;
+    }
+
+    &:nth-child(2) {
+        left: 0;
+    }
+
+    @include breakpoint('medium') {
+        display: inline-block;
+    }
+}
