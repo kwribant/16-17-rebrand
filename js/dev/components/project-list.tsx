@@ -2,7 +2,7 @@
 import * as React from "react";
 
 // Static
-import { PortfolioPieceList } from '../static/portfolio-pieces';
+import { PortfolioPieceList } from '../static/content/portfolio-pieces';
 
 // Components
 import { WidthContainer } from "./width-container";

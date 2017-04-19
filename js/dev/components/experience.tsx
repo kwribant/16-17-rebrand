@@ -2,7 +2,7 @@
 import * as React from "react";
 
 // Static
-import { ExperienceOrder } from '../static/experience';
+import { ExperienceOrder } from '../static/content/experience';
 
 // Components
 import { CalloutBox } from "./callout-box";
@@ -39,7 +39,7 @@ export class Experiences extends React.Component<{}, {}> {
     const experienceSections = [];
     ExperienceOrder.forEach((experienceSectionItem, index) => {
       experienceSections.push(
-        <div className={`${experienceSectionClass}__list-container`}>
+        <div className={`${experienceSectionClass}__list-container`} key={index}>
           <h1 className={`${experienceSectionClass}__headline`}>{experienceSectionItem.title}</h1>
 
           {this.renderExperienceList(experienceSectionItem.content)}

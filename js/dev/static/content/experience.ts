@@ -1,4 +1,6 @@
-export const Education = [
+import { ExperienceDataList } from '../typings';
+
+export const Education: ExperienceDataList = [
   {
     institution: 'General Assembly',
     role: 'Certification, UX Design',
@@ -13,7 +15,7 @@ export const Education = [
   },
 ];
 
-export const Experience = [
+export const Experience: ExperienceDataList = [
   {
     institution: 'Dropbox',
     role: 'Engineer ',
@@ -34,7 +36,10 @@ export const Experience = [
   },
 ];
 
-export const ExperienceOrder = [
+export const ExperienceOrder: {
+  title: string,
+  content: ExperienceDataList
+}[] = [
   {
     title: 'Education',
     content: Education

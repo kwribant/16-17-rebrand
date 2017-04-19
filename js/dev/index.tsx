@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 
 // Pages
-import { HomePage } from "./pages/home";
-import { PortfolioPiecePage } from "./pages/portfolio-piece";
+import { HomePage } from "./containers/home";
+import { SubPage } from "./containers/child";
 
 // Components
 import { Footer } from "./components/footer";
@@ -23,7 +23,7 @@ ReactDOM.render(
     <main>
       {/* Start routes */}
       <Route exact path="/" component={ HomePage } />
-      <Route path="/:portfolioPiece" component={ PortfolioPiecePage }/>
+      <Route path="/:childStub" component={ SubPage } />
       {/* End routes */}
 
       <FooterCTA />
