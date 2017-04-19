@@ -7,35 +7,10 @@ import * as React from "react";
 
 // Containers + Components
 
+interface PortfolioPieceProps extends React.Props<PortfolioPiece> {}
 
-interface PortfolioPieceProps extends RouteComponentProps<PortfolioPiece> {
-  match: any;
-}
-
-export class SubPage extends React.Component<SubPageProps, {}> {
-  private isValidPiece(portfolioPiece): boolean {
-    // Determine if the portfolio piece stub is valid. If it isn't, we'll serve
-    // a 404 message and a list of valid portfolio pieces
-    const validPieces = Object.keys(PortfolioPieces);
-    return validPieces.indexOf(portfolioPiece) >= 0;
-  }
-
-  private renderGuts = (stub) => {
-    if (this.isValidPiece(stub)) {
-      const content = PortfolioPieces[stub];
-      return (
-        <p>Match found!</p>
-      )
-    } else {
-      return (
-        <p>404 page</p>
-      )
-    }
-  }
-
+export class PortfolioPiece extends React.Component<PortfolioPieceProps, {}> {
   render() {
-    const { subPageStub } = this.props.match.params;
-
-    return this.renderGuts(subPageStub);
+    return (<p>yas</p>)
   }
 }
