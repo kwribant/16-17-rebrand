@@ -2,11 +2,11 @@
 import * as React from "react";
 import { RouteComponentProps } from 'react-router-dom';
 
-// Types
+// Content
 import { PortfolioPieces } from '../static/content/portfolio-pieces';
 
 // Containers + Components
-
+import { PortfolioPiecePage } from './portfolio-piece';
 
 interface SubPageProps extends RouteComponentProps<any> {
   match: any;
@@ -21,16 +21,21 @@ export class SubPage extends React.Component<SubPageProps, {}> {
   }
 
   private renderGuts = (stub) => {
+    let renderedPage: JSX.Element | undefined;
+
     if (this.isValidPiece(stub)) {
       const content = PortfolioPieces[stub];
-      return (
-        <p>Match found!</p>
+
+      renderedPage = (
+        <PortfolioPiecePage content={content} stub={stub} />
       )
     } else {
-      return (
+      renderedPage = (
         <p>404 page</p>
       )
     }
+
+    return renderedPage;
   }
 
   render() {

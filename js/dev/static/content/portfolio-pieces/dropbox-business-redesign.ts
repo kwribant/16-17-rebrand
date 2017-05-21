@@ -33,5 +33,6 @@ export const DropboxBusinessRedesignData: PortfolioContent = {
       alt: "Dropbox Business tour page",
       footnote: "Scalable components allow pages such as Tour to expose meticulously crafted content, boosting SEO"
     },
-  ]
+  ],
+  url: 'http://dropbox.com/business'
 }

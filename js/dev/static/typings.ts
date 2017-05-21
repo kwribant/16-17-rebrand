@@ -29,7 +29,8 @@ export interface PortfolioContent {
   technologies: Technologies,
   overview: Paragraphs,
   reflections: Paragraphs,
-  pictures: Picture[]
+  pictures: Picture[],
+  url?: string
 }
 
 export interface PortfolioPieceDict {

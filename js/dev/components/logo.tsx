@@ -4,9 +4,11 @@ export class Logo extends React.Component<{}, {}> {
   render() {
     return (
       <div className="logo">
-        <p className="logo__name">Kyle Ribant</p>
+        <a href="/" className="logo__link">
+          <p className="logo__name">Kyle Ribant</p>
 
-        <p className="logo__profession">Development + Design</p>
+          <p className="logo__profession">Development + Design</p>
+        </a>
       </div>
     );
   }

@@ -7,24 +7,37 @@ import { PortfolioPieceList } from '../static/content/portfolio-pieces';
 // Components
 import { WidthContainer } from "./width-container";
 
-interface ProjectListProps extends React.Props<ProjectList> {}
+interface ProjectListProps extends React.Props<ProjectList> {
+  currentPiece?: string;
+  headline?: string;
+}
 
-export class ProjectList extends React.Component<ProjectListProps, {}> {
+export class ProjectList extends React.Component<ProjectListProps, void> {
+  public static defaultProps: Partial<ProjectListProps> = {
+    headline: "Selected work"
+  };
+
   private renderProjectsList = () => {
     const projectsListClass: string = "projects-list";
 
-    let listItems = [];
-    PortfolioPieceList.forEach((projectItem, index) => {
-      listItems.push(
-        <li className={`${projectsListClass}__item`} key={index}>
-          <a href="#" className={`${projectsListClass}__link`}>
-            <h2 className={`${projectsListClass}__headline`}>{projectItem.headline}</h2>
+    // Removes current project if there is one
+    delete PortfolioPieceList[this.props.currentPiece];
 
-            <p className={`${projectsListClass}__copy`}>{projectItem.copy}</p>
-          </a>
-        </li>
-      );
-    });
+    const listItems = (
+      Object.keys(PortfolioPieceList).map((projectItem, index) => {
+        const projectData = PortfolioPieceList[projectItem];
+
+        return (
+          <li className={`${projectsListClass}__item`} key={index}>
+            <a href={`/${projectItem}`} className={`${projectsListClass}__link`}>
+              <h2 className={`${projectsListClass}__headline`}>{projectData.headline}</h2>
+
+              <p className={`${projectsListClass}__copy`}>{projectData.copy}</p>
+            </a>
+          </li>
+        );
+      })
+    );
 
     return (
       <ul className={projectsListClass}>
@@ -39,7 +52,7 @@ export class ProjectList extends React.Component<ProjectListProps, {}> {
     return (
       <section className={projectsClass}>
         <WidthContainer elementClassName={projectsClass}>
-          <h1 className={`${projectsClass}__headline`}>Selected work</h1>
+          <h1 className={`${projectsClass}__headline`}>{this.props.headline}</h1>
 
           {this.renderProjectsList()}
         </WidthContainer>

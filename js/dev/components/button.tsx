@@ -13,7 +13,10 @@ export class Button extends React.Component<ButtonProps, {}> {
     }, buttonClass);
 
     return (
-      <a href="#" className={buttonClasses}>
+      <a
+        className={buttonClasses}
+        href="mailto:hi@kyleribant.com?subject=Hey%20Kyle%21&body=I%27m%20sending%20you%20an%20email%20from%20your%20website"
+      >
         <span className={`${buttonClass}__copy-box`}>
           Message me
         </span>

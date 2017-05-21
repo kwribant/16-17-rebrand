@@ -23,7 +23,7 @@ export class CTA extends React.Component<CTAProps, {}> {
         <Button small={this.props.small} />
 
         <p className={`${ctaClass}__link-copy`}>
-          or <a href="#" className={`${ctaClass}__link`}>view résumé</a>
+          or <a href="/resources/resume.pdf" className={`${ctaClass}__link`} target="_blank">view résumé</a>
         </p>
       </div>
     );

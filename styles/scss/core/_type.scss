@@ -40,7 +40,7 @@ $copy-set: (
       base: (
         font-size: 16px,
         line-height: $headlineLineHeight,
-        weight: $normal-weight
+        font-weight: $normal-weight
       ),
       medium: (
         font-size: 20px
@@ -50,7 +50,7 @@ $copy-set: (
     base: (
       font-size: 16px,
       line-height: $headlineLineHeight,
-      weight: $heavy-weight
+      font-weight: $heavy-weight
     ),
   ),
   body1: (

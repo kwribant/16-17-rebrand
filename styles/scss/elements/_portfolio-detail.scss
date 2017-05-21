@@ -1,0 +1,164 @@
+$portfolio-break: 600px;
+
+@include block('project-detail') {
+    @include element('width-container') {
+        @include static-width();
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    @include element('background') {
+        position: absolute;
+
+        @include breakpoint($portfolio-break) {
+            width: 75%;
+            height: 100%;
+            background: color('light-gray');
+            top: 0;
+            left: 0;
+        }
+    }
+
+    @include element('headline-wrapper') {
+        position: relative;
+        @include tb-padding('hero');
+    }
+
+    @include element('headline') {
+        @include type('h1');
+        color: color('mustard');
+        z-index: 1;
+        position: relative;
+        padding: 20px;
+        background: color('blush');
+
+        @include breakpoint($portfolio-break) {
+            margin-left: 20px;
+            background: color('blush');
+            padding-right: 0;
+            padding: 0 0 0 20px;
+        }
+    }
+
+    @include element('column-wrapper') {
+        @include grid-item(10);
+
+        @include breakpoint('medium') {
+            // Using a static width to maintain integrity of design
+            width: 655px;
+        }
+    }
+
+    @include element('portfolio-content') {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint($portfolio-break) {
+            // width: 50%;
+            flex-direction: row;
+        }
+    }
+}
+
+@include block('project-copy') {
+    background: color(light-gray);
+
+    // padding: 20px;
+    padding: 20px;
+
+    @include breakpoint($portfolio-break) {
+        width: 50%;
+        padding-top: 0;
+    }
+
+    @include element('headline') {
+        @include type('h3');
+        color: color('mustard');
+        @include b-margin('h1');
+    }
+
+    @include element('subheadline') {
+        @include type('h4');
+        @include b-margin('body');
+    }
+
+    @include element('paragraph') {
+        @include type('body2');
+        @include b-margin('h1');
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    @include element('list') {
+        @include reset-list();
+    }
+
+    @include element('list-item') {
+        @include type('body2');
+    }
+
+    @include element('link') {
+        @include type('h4');
+        color: color('mustard');
+        text-decoration: underline;
+        @include tb-margin('hero');
+        display: block;
+    }
+}
+
+@include block('project-images') {
+    // width: 50%;
+    position: relative;
+    // padding-top: 20px;
+
+    @include t-margin('border');
+
+    @include breakpoint($portfolio-break) {
+        width: 50%;
+        margin-top: 0;
+    }
+
+    @include element('background') {
+        position: absolute;
+
+        @include breakpoint($portfolio-break) {
+            background-color: color(light-gray);
+            height: 100%;
+            width: 50%;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    @include element('figure') {
+        margin: 0 auto;
+        padding: 0;
+        max-width: 370px;
+
+        @include breakpoint($portfolio-break) {
+            margin: 0;
+        }
+    }
+
+    @include element('footnote') {
+        @include type('body2');
+        @include t-margin('body');
+        @include b-margin('h1');
+        color: color('dark-gray');
+
+        @include breakpoint($portfolio-break) {
+            width: 50%;
+            padding-right: 20px;
+        }
+    }
+
+    @include element('list') {
+        @include reset-list();
+        position: relative;
+        z-index: 1;
+    }
+}

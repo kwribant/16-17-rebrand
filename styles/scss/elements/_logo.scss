@@ -1,27 +1,42 @@
 %LOGOSTYLE {
     @include type('body2');
+    color: color('darkest-gray');
+    padding: 0 10px;
     text-align: center;
 }
 
-.logo {
+@include block('logo') {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+
+    @include element('link') {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover,
+        &:focus {
+            @include block('logo') {
+                @include element('name') {
+                    background: color('blush');
+                }
+
+                @include element('profession') {
+                    background: color('mustard');
+                }
+            }
+        }
+    }
 
     @include element('name') {
         @extend %LOGOSTYLE;
+        @include b-margin('body');
+        background: color('mustard');
     }
 
     @include element('profession') {
         @extend %LOGOSTYLE;
-    }
-
-    &__name {
-        color: color('darkest-gray');
-        margin-bottom: 5px; // TODO: put into variable
-    }
-
-    &__profession {
-        color: color('dark-gray');
+        background: color('blush');
     }
 }
