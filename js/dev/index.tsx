@@ -1,9 +1,11 @@
 // Libs
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+// import { browserHistory } from "react-router";
 import {
-  BrowserRouter as Router,
-  Route
+  BrowserRouter,
+  Route,
+  Link,
 } from 'react-router-dom';
 
 // Pages
@@ -19,7 +21,7 @@ import "../../styles/scss/styles.scss";
 
 
 ReactDOM.render(
-  <Router>
+  <BrowserRouter>
     <main>
       {/* Start routes */}
       <Route exact path="/" component={ HomePage } />
@@ -32,6 +34,6 @@ ReactDOM.render(
       <Footer />
       {/* End persistent footer */}
     </main>
-  </Router>,
+  </BrowserRouter>,
   document.getElementById("page-contents")
 );

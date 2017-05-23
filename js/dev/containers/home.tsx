@@ -1,7 +1,7 @@
 // Libs
 import * as React from "react";
 import { Link } from 'react-router-dom'
-import { RouteComponentProps} from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 
 // Components
 import { Hero } from '../components/hero';

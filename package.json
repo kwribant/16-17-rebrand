@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "webpack --progress --colors",
-    "start": "webpack-dev-server --inline --content-base . --history-api-fallback"
+    "build": "webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",

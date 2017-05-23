@@ -1,18 +1,14 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: !process.env.NODE_ENV
+    filename: "../../styles/styles.css"
 });
 
 module.exports = {
-    entry: [
-      "./js/dev/index.tsx"
-    ],
+    entry: "./js/dev/index.tsx",
 
     output: {
         filename: "bundle.js",
-        path: '/js/compiled',
-        publicPath: '/js/compiled'
+        path: __dirname + '/js/compiled'
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -44,14 +40,14 @@ module.exports = {
 
     plugins: [
       extractSass
-    ],
+    ]
 
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    },
+    // externals: {
+    //     "react": "React",
+    //     "react-dom": "ReactDOM"
+    // },
 };
