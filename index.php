@@ -27,10 +27,6 @@ $stub = trim($path, "/");
     <!-- Analytics, obviously -->
     <?php include_once("php/analytics.php") ?>
 
-    <!-- Dependencies -->
-    <!--<script src="./node_modules/react/dist/react.js"></script>
-    <script src="./node_modules/react-dom/dist/react-dom.js"></script>-->
-
     <!-- Bundled JS -->
     <script src="./js/compiled/bundle.js"></script>
   </body>
