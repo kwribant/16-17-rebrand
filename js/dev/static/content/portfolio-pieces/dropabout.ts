@@ -14,7 +14,7 @@ export const DropaboutData: PortfolioContent = {
     "Python"
   ],
   overview: [
-    "I sometimes compare Dropbox’s office to a shopping mall—I see someone new every day (and I may never see them again). Dropabout, our internal employee catalog, is used by [x] Dropboxers a day to see who works on what team, who’s birthday it is, or to update personal information (Enneagram number, neighborhood and previous experience, for example) on their profile.",
+    "I sometimes compare Dropbox’s office to a shopping mall—I see someone new every day (and I may never see them again). Dropabout, our internal employee catalog, is used by hundreds Dropboxers a day to see who works on what team, who’s birthday it is, or to update personal information (Enneagram number, neighborhood and previous experience, for example) on their profile.",
     "I worked as the UI engineer alongside two full-stack developers on this week-long project. By utilizing an approved set of colors and type styles already used across Dropbox’s web properties with an engineer’s perspective, I generated a new brand for Dropbox’s internal applications."
   ],
   reflections: [
