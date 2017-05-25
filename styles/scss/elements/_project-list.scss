@@ -28,7 +28,6 @@
 
     @include breakpoint('medium') {
         flex-direction: row;
-        justify-content: center;
         align-items: baseline;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -36,7 +35,6 @@
 
     @include element('item') {
         margin-top: 20px;
-        // @include grid-item(10);
         @include grid-item(10);
 
         &:first-child {
@@ -51,12 +49,11 @@
             }
         }
 
-
-        &:hover { // TODO: refactor
-            .projects-list {
-                &__headline,
-                &__copy {
+        &:hover {
+            @include block('projects-list') {
+                @include element('headline') {
                     color: color('mustard');
+                    transition: color 50ms ease-in;
                 }
             }
         }
@@ -66,6 +63,7 @@
         @include type('h4');
         @include b-margin('body');
         color: color('darkest-gray');
+        transition: color 50ms ease-in;
     }
 
     @include element('copy') {

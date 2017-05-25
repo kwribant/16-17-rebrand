@@ -19,8 +19,8 @@ $copy-set: (
   h1: (
     base: (
       font-size: 25px,
-      line-height: $headlineLineHeight,
-      font-weight: $normal-weight
+      font-weight: $normal-weight,
+      line-height: $headlineLineHeight
     ),
     medium: (
       font-size: 31px,
@@ -29,8 +29,8 @@ $copy-set: (
   h2: (
     base: (
       font-size: 20px,
-      line-height: $headlineLineHeight,
-      font-weight: $normal-weight
+      font-weight: $normal-weight,
+      line-height: $headlineLineHeight
     ),
     medium: (
       font-size: 25px,
@@ -39,8 +39,8 @@ $copy-set: (
   h3: (
       base: (
         font-size: 16px,
-        line-height: $headlineLineHeight,
-        font-weight: $normal-weight
+        font-weight: $normal-weight,
+        line-height: $headlineLineHeight
       ),
       medium: (
         font-size: 20px
@@ -49,22 +49,22 @@ $copy-set: (
   h4: (
     base: (
       font-size: 16px,
-      line-height: $headlineLineHeight,
-      font-weight: $heavy-weight
+      font-weight: $heavy-weight,
+      line-height: $headlineLineHeight
     ),
   ),
   body1: (
     base: (
       font-size: 16px,
-      line-height: $bodyLineHeight,
-      font-weight: $normal-weight
+      font-weight: $normal-weight,
+      line-height: $bodyLineHeight
     )
   ),
   body2: (
     base: (
       font-size: 14px,
-      line-height: $bodyLineHeight,
-      font-weight: $normal-weight
+      font-weight: $normal-weight,
+      line-height: $bodyLineHeight
     )
   )
 );
@@ -74,6 +74,7 @@ $copy-set: (
 //
 @mixin type($copy-set-child) {
     font-family: $font-family;
+
     @if map-has-key($copy-set, $copy-set-child) {
         // now we have access to the different breakpoint (base, and medium)
         $breakpoint-groups: map-get($copy-set, $copy-set-child);
@@ -95,21 +96,23 @@ $copy-set: (
 //
 @mixin link() {
     color: color('darkest-gray');
+    position: relative;
+    z-index: 2;
 
     &::after {
         width: 100%;
-        content: "";
-        border-bottom: 1px solid color('darkest-gray');
         display: block;
         position: relative;
         bottom: 2px;
+        content: "";
+        border-bottom: 1px solid color('darkest-gray');
+        transition: border 50ms ease-in;
     }
 
     &:hover {
-        color: color('dark-gray');
-
         &::after {
-            border-color: color('dark-gray');
+            border-bottom: 1px solid color('mustard');
+            transition: border 50ms ease-in;
         }
     }
 }

@@ -6,9 +6,9 @@
 }
 
 @include block('logo') {
-    position: relative;
     display: flex;
     justify-content: center;
+    position: relative;
 
     @include element('link') {
         display: flex;
@@ -20,10 +20,12 @@
             @include block('logo') {
                 @include element('name') {
                     background: color('blush');
+                    transition: background 50ms ease-in;
                 }
 
                 @include element('profession') {
                     background: color('mustard');
+                    transition: background 50ms ease-in;
                 }
             }
         }
@@ -33,10 +35,12 @@
         @extend %LOGOSTYLE;
         @include b-margin('body');
         background: color('mustard');
+        transition: background 50ms ease-in;
     }
 
     @include element('profession') {
         @extend %LOGOSTYLE;
         background: color('blush');
+        transition: background 50ms ease-in;
     }
 }

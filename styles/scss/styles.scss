@@ -3,7 +3,6 @@
 //
 @import "core/bem";
 @import "core/breakpoints";
-@import "core/functions";
 @import "core/grid";
 @import "core/reset";
 @import "core/spacing";
@@ -11,25 +10,22 @@
 @import "core/type";
 
 //
-// Containers
-//
-
-//
 // Components
 //
+@import "elements/callout-box";
+@import "elements/cta";
+@import "elements/background-header";
+@import "elements/browser-image";
+@import "elements/button";
+@import "elements/experience";
+@import "elements/footer";
+@import "elements/footer-cta";
 @import "elements/hero";
 @import "elements/logo";
-@import "elements/footer";
-@import "elements/button";
-@import "elements/cta";
-@import "elements/callout-box";
-@import "elements/spacer";
-@import "elements/project-list";
-@import "elements/experience";
-@import "elements/footer-cta";
-@import "elements/background-header";
+@import "elements/page";
 @import "elements/portfolio-detail";
-@import "elements/browser-image";
+@import "elements/project-list";
+@import "elements/spacer";
 
 // Global calls
 @include reset();

@@ -1,7 +1,7 @@
 @include block('browser-image') {
-    border: 1px solid color('dark-gray');
-    background: color('lightest-gray');
     padding: 10px;
+    background: color('lightest-gray');
+    border: 1px solid color('dark-gray');
 
     @include element('icon-list') {
         @include reset-list();
@@ -40,16 +40,15 @@
     }
 
     @include element('icon') {
+        display: block;
         width: 12px;
         height: 12px;
-        display: block;
         border-radius: 50%;
         background-color: color('mustard');
     }
 
     @include element('image') {
-        border: 1px solid color('dark-gray');
         display: block;
-        // box-shadow: 0px 0px 4px 0px color('dark-gray');
+        border: 1px solid color('dark-gray');
     }
 }

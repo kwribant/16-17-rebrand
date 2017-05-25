@@ -1,3 +1,4 @@
+var autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractSass = new ExtractTextPlugin({
     filename: "../../styles/styles.css"
@@ -26,11 +27,12 @@ module.exports = {
             {
               test: /\.scss$/,
               loader: extractSass.extract({
-                  use: [{
-                      loader: "css-loader"
-                  }, {
-                      loader: "sass-loader"
-                  }],
+                  use: [
+                    {loader: "css-loader"},
+                    // { loader: 'css-loader', options: { importLoaders: 1 } },
+                    {loader: "postcss-loader"},
+                    {loader: "sass-loader"}
+                  ],
                   // use style-loader in development
                   fallback: "style-loader"
               })

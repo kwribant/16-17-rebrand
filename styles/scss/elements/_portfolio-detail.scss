@@ -15,30 +15,28 @@ $portfolio-break: 600px;
         @include breakpoint($portfolio-break) {
             width: 75%;
             height: 100%;
-            background: color('light-gray');
             top: 0;
             left: 0;
+            background: color('light-gray');
         }
     }
 
     @include element('headline-wrapper') {
-        position: relative;
         @include tb-padding('hero');
+        position: relative;
     }
 
     @include element('headline') {
         @include type('h1');
-        color: color('mustard');
-        z-index: 1;
-        position: relative;
-        padding: 20px;
+        padding: 10px 10px 10px 20px;
         background: color('blush');
+        position: relative;
+        z-index: 1;
 
         @include breakpoint($portfolio-break) {
             margin-left: 20px;
-            background: color('blush');
-            padding-right: 0;
             padding: 0 0 0 20px;
+            background: color('blush');
         }
     }
 
@@ -56,7 +54,6 @@ $portfolio-break: 600px;
         flex-direction: column;
 
         @include breakpoint($portfolio-break) {
-            // width: 50%;
             flex-direction: row;
         }
     }
@@ -64,8 +61,6 @@ $portfolio-break: 600px;
 
 @include block('project-copy') {
     background: color(light-gray);
-
-    // padding: 20px;
     padding: 20px;
 
     @include breakpoint($portfolio-break) {
@@ -75,8 +70,8 @@ $portfolio-break: 600px;
 
     @include element('headline') {
         @include type('h3');
-        color: color('mustard');
         @include b-margin('h1');
+        color: color('mustard');
     }
 
     @include element('subheadline') {
@@ -102,20 +97,16 @@ $portfolio-break: 600px;
     }
 
     @include element('link') {
+        @include link();
         @include type('h4');
-        color: color('mustard');
-        text-decoration: underline;
         @include tb-margin('hero');
-        display: block;
+        display: inline-block;
     }
 }
 
 @include block('project-images') {
-    // width: 50%;
-    position: relative;
-    // padding-top: 20px;
-
     @include t-margin('border');
+    position: relative;
 
     @include breakpoint($portfolio-break) {
         width: 50%;
@@ -135,9 +126,9 @@ $portfolio-break: 600px;
     }
 
     @include element('figure') {
-        margin: 0 auto;
-        padding: 0;
         max-width: 370px;
+        padding: 0;
+        margin: 0 auto;
 
         @include breakpoint($portfolio-break) {
             margin: 0;

@@ -3,11 +3,11 @@ import * as React from "react";
 import * as cx from "classnames";
 
 interface BrowserImageProps extends React.Props<BrowserImage> {
-  src: string;
   alt: string;
+  src: string;
 }
 
-export class BrowserImage extends React.Component<BrowserImageProps, {}> {
+export class BrowserImage extends React.Component<BrowserImageProps, void> {
   projectImageClass = 'browser-image';
 
   private getImageSrc = (imageSrc) => {
@@ -15,11 +15,15 @@ export class BrowserImage extends React.Component<BrowserImageProps, {}> {
             (min--moz-device-pixel-ratio: 1.5),\
             (-o-min-device-pixel-ratio: 3/2),\
             (min-resolution: 1.5dppx)";
+
+    let finalImageSrc: string;
     if ((window.devicePixelRatio > 1) || (window.matchMedia && window.matchMedia(mediaQuery).matches)) {
-      return imageSrc.substr(0, imageSrc.lastIndexOf(".")) + "@2x.jpg";
+      finalImageSrc = imageSrc.substr(0, imageSrc.lastIndexOf(".")) + "@2x.jpg";
     } else {
-      return imageSrc;
+      finalImageSrc = imageSrc;
     }
+
+    return finalImageSrc;
   }
 
   private renderBrowserBar = () => {

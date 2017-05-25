@@ -1,6 +1,7 @@
+// Libs
 import * as React from "react";
 
-export class Logo extends React.Component<{}, {}> {
+export class Logo extends React.Component<{}, void> {
   render() {
     return (
       <div className="logo">

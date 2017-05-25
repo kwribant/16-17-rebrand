@@ -5,15 +5,15 @@
 
     @include element('copy') {
         @include type('h2');
-        color: color('darkest-gray');
-        text-align: center;
         margin-bottom: 15px;
+        text-align: center;
+        color: color('darkest-gray');
     }
 
     @include element('link-copy') {
         @include type('body1');
-        color: color('darkest-gray');
         margin-top: 10px;
+        color: color('darkest-gray');
     }
 
     @include element('link') {

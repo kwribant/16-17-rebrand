@@ -2,8 +2,7 @@
 import * as React from "react";
 
 // Static
-// import { PortfolioPieceList } from '../static/content/portfolio-pieces';
-import {PortfolioContent} from '../static/typings';
+import { PortfolioContent } from '../static/typings';
 
 // Components
 import { WidthContainer } from "./width-container";
@@ -125,23 +124,21 @@ export class ProjectDetail extends React.Component<ProjectDetailProps, void> {
     const projectDetailClass: string = "project-detail";
 
     return (
-      // <section className={projectsClass}>
-        <WidthContainer elementClassName={projectDetailClass}>
-          <div className={`${projectDetailClass}__column-wrapper`}>
+      <WidthContainer elementClassName={projectDetailClass}>
+        <div className={`${projectDetailClass}__column-wrapper`}>
 
-            <div className={`${projectDetailClass}__headline-wrapper`}>
-              <div className={`${projectDetailClass}__background`} />
-              <h1 className={`${projectDetailClass}__headline`}>{this.props.content.title}</h1>
-            </div>
-
-            <div className={`${projectDetailClass}__portfolio-content`}>
-              {this.renderCopy()}
-
-              {this.renderImages()}
-            </div>
+          <div className={`${projectDetailClass}__headline-wrapper`}>
+            <div className={`${projectDetailClass}__background`} />
+            <h1 className={`${projectDetailClass}__headline`}>{this.props.content.title}</h1>
           </div>
-        </WidthContainer>
-      // </section>
+
+          <div className={`${projectDetailClass}__portfolio-content`}>
+            {this.renderCopy()}
+
+            {this.renderImages()}
+          </div>
+        </div>
+      </WidthContainer>
     );
   }
 }

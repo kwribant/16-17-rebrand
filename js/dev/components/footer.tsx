@@ -2,32 +2,30 @@ import * as React from "react";
 
 import { WidthContainer } from "./width-container";
 
-export class Footer extends React.Component<{}, {}> {
+export class Footer extends React.Component<{}, void> {
   private renderSocialList = () => {
     const socialContent = [
       {
-        'href': 'www.linkedin.com/in/kyleribant',
-        'copy': 'LinkedIn'
+        'copy': 'LinkedIn',
+        'href': 'https://www.linkedin.com/in/kyleribant'
       },
       {
-        'href': 'mailto: hi@kyleribant.com',
-        'copy': 'Email'
+        'copy': 'Email',
+        'href': 'mailto: hi@kyleribant.com'
       }
     ];
 
-    let socialList = [];
-
-    socialContent.forEach((socialItem, index) => {
-      const listItem = (
-        <li key={index} className="footer__link-list-item">
-          <a href={socialItem.href} target="_blank" className="footer__link">
-            {socialItem.copy}
-          </a>
-        </li>
-      )
-
-      socialList.push(listItem);
-    });
+    const socialList = (
+      socialContent.map((socialItem, index) => {
+        return (
+          <li key={index} className="footer__link-list-item">
+            <a href={socialItem.href} target="_blank" className="footer__link">
+              {socialItem.copy}
+            </a>
+          </li>
+        );
+      })
+    );
 
     return (
       <ul className="footer__link-list">
@@ -40,13 +38,15 @@ export class Footer extends React.Component<{}, {}> {
     const date = new Date().getFullYear();
 
     return (
-      <p className="footer__copyright">© { date } Kyle Ribant</p>
+      <p className="footer__copyright">
+        <span className="footer__copyright-symbol">©</span> <span className="footer__copyright-text">{ date } Kyle Ribant</span>
+      </p>
     )
   }
 
   render() {
     return (
-      <footer className="footer"> {/* Footer is full width */}
+      <footer className="footer">
         <WidthContainer elementClassName="footer">
           <div className="footer__content">
             {this.renderSocialList()}

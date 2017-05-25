@@ -1,13 +1,17 @@
 @include block('callout-text') {
     @include type('h2');
-    color: color('darkest-gray', .75);
-    background: color('blush');
     display: none;
-    position: absolute;
     width: 145px;
-    text-align: center;
     padding: 9px 0;
+    position: absolute;
     bottom: -27px;
+    background: color('blush');
+    color: color('darkest-gray', .75);
+    text-align: center;
+
+    &:hover {
+        background: color('mustard');
+    }
 
     &:nth-child(1) {
         right: 0;

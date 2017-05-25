@@ -1,0 +1,33 @@
+@keyframes maskfade {
+  0%   { opacity: 1; z-index: 100; }
+  99%  { opacity: 0; }
+  100% { opacity: 0; z-index: 0; }
+}
+
+body {
+    &.locked {
+        overflow: hidden;
+    }
+}
+
+@include block('page-mask') {
+    background: color('lightest-gray');
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    opacity: 1;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include modifier('loaded') {
+        animation: maskfade 500ms;
+        opacity: 0;
+        z-index: -1;
+         overflow: auto;
+    }
+}

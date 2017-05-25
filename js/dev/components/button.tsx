@@ -1,3 +1,4 @@
+// Libs
 import * as React from "react";
 import * as cx from "classnames";
 
@@ -5,7 +6,7 @@ interface ButtonProps extends React.Props<Button> {
   small?: boolean;
 }
 
-export class Button extends React.Component<ButtonProps, {}> {
+export class Button extends React.Component<ButtonProps, void> {
   render() {
     const buttonClass: string = "button";
     const buttonClasses = cx({

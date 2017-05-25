@@ -5,17 +5,10 @@
 }
 
 @include block('portfolio-background') {
-    position: absolute;
     width: 100%;
     height: 360px;
+    position: absolute;
     background: url('/images/portfolio-hero.jpg');
     background-size: cover;
-    background-position: 50% 85%;
-
-    // @include element('image') {
-    //     background: pink;
-    //     height: 250px;
-    //     width: 100%;
-    //     position: absolute;
-    // }
+    background-position: 50% 40%;
 }

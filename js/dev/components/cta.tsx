@@ -9,7 +9,7 @@ interface CTAProps extends React.Props<CTA> {
   small?: boolean;
 }
 
-export class CTA extends React.Component<CTAProps, {}> {
+export class CTA extends React.Component<CTAProps, void> {
   render() {
     const ctaClass = "cta";
     const ctaClasses = cx({

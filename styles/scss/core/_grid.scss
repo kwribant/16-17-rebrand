@@ -41,20 +41,6 @@ $grid-set: (
 }
 
 //
-// Grid getter
-//
-// $function get-grid($breakpoint-name, $grid-properties) {
-//     // Get breakpoint-specific ratio vals
-//     $gutterWidth: map-get($grid-properties, "gutter");
-//     $columnWidth: map-get($grid-properties, "column");
-//     $viewportWidth: map-get($grid-properties, "viewport");
-//
-//     // Define the total width (combo of col + gutter vals)
-//     $guttersToAddToWidth: ($columns - 1);
-//     $totalColumnWidth: ($columns * $columnWidth) + ($guttersToAddToWidth * $gutterWidth);
-// };
-
-//
 // Element width helper
 //
 @mixin grid-item($columns) {
@@ -75,22 +61,3 @@ $grid-set: (
         }
     }
 }
-
-//
-// Grid width helper
-//
-// @function grid-space($columns, $property) {
-//     // Get breakpoint-specific ratio vals
-//     $gutterWidth: map-get($grid-properties, "gutter");
-//     $columnWidth: map-get($grid-properties, "column");
-//     $viewportWidth: map-get($grid-properties, "viewport");
-//
-//     // Define the total width (combo of col + gutter vals)
-//     $guttersToAddToWidth: ($columns - 1);
-//     $totalColumnWidth: ($columns * $columnWidth) + ($guttersToAddToWidth * $gutterWidth);
-//
-//     @include breakpoint($breakpoint-name) {
-//         width: percentage($totalColumnWidth / $viewportWidth);
-//         @include gutter(percentage(($gutterWidth / 2) / $viewportWidth)) // We divide $gutterWidth for even spacing
-//     }
-// }

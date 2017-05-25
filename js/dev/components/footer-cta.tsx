@@ -5,7 +5,7 @@ import * as React from "react";
 import { CTA } from "./cta";
 import { WidthContainer } from "./width-container";
 
-export class FooterCTA extends React.Component<{}, {}> {
+export class FooterCTA extends React.Component<{}, void> {
   render() {
     const footerCTAClass: string = "footer-cta";
 

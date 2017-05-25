@@ -9,13 +9,8 @@ import { WidthContainer } from "./width-container";
 
 interface HeroProps extends React.Props<Hero> {}
 
-export class Hero extends React.Component<HeroProps, {}> {
+export class Hero extends React.Component<HeroProps, void> {
   private renderBackground = () => {
-    // Hero background contains:
-      // 1. Image (top 80%)
-      // 2. Color (bottom 20%)
-      // 3. Two hero callouts
-
     const backgroundClass: string = "hero-background";
 
     return (

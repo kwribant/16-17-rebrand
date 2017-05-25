@@ -12,7 +12,7 @@ interface SubPageProps extends RouteComponentProps<any> {
   match: any;
 }
 
-export class SubPage extends React.Component<SubPageProps, {}> {
+export class SubPage extends React.Component<SubPageProps, void> {
   private isValidPiece(portfolioPiece): boolean {
     // Determine if the portfolio piece stub is valid. If it isn't, we'll serve
     // a 404 message and a list of valid portfolio pieces
@@ -26,16 +26,12 @@ export class SubPage extends React.Component<SubPageProps, {}> {
     if (this.isValidPiece(stub)) {
       const content = PortfolioPieces[stub];
 
-      renderedPage = (
+      return (
         <PortfolioPiecePage content={content} stub={stub} />
       )
     } else {
-      renderedPage = (
-        <p>404 page</p>
-      )
+      document.location.href = "/";
     }
-
-    return renderedPage;
   }
 
   render() {

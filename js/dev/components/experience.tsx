@@ -10,7 +10,7 @@ import { CTA } from "./cta";
 import { Logo } from "./logo";
 import { WidthContainer } from "./width-container";
 
-export class Experiences extends React.Component<{}, {}> {
+export class Experiences extends React.Component<{}, void> {
   private renderExperienceList = (experienceList) => {
     const experienceListClass: string = "experience-list";
 
@@ -19,8 +19,11 @@ export class Experiences extends React.Component<{}, {}> {
       experienceItems.push(
         <li className={`${experienceListClass}__item`} key={index}>
           <h2 className={`${experienceListClass}__headline`}>{experienceItem.institution}</h2>
+
           <p className={`${experienceListClass}__meta`}>{experienceItem.role}</p>
+
           <p className={`${experienceListClass}__meta`}>{experienceItem.dates}</p>
+
           <p className={`${experienceListClass}__description`}>{experienceItem.description}</p>
         </li>
       );
@@ -60,8 +63,7 @@ export class Experiences extends React.Component<{}, {}> {
     return (
       <div className={backgroundClass}>
         <WidthContainer elementClassName={backgroundClass}>
-          <div className={`${backgroundClass}__content`}>
-          </div>
+          <div className={`${backgroundClass}__content`} />
         </WidthContainer>
       </div>
     );

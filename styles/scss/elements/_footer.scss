@@ -38,4 +38,15 @@
         @include type(body2);
         align-self: center;
     }
+
+    @include element('copyright-text') {
+        vertical-align: middle;
+    }
+
+    @include element('copyright-symbol') {
+        font-size: 12px; // One off font size for symbol sizing
+        vertical-align: middle;
+        position: relative;
+        top: 1px;
+    }
 }

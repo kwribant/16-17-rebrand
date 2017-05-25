@@ -4,18 +4,18 @@ import * as React from "react";
 // Types
 import {PortfolioContent} from '../static/typings';
 
-// Containers + Components
-import { ProjectList } from '../components/project-list';
-import { ProjectDetail } from '../components/project-detail';
-import { Spacer } from '../components/spacer';
+// Components
 import { Logo } from '../components/logo';
+import { ProjectDetail } from '../components/project-detail';
+import { ProjectList } from '../components/project-list';
+import { Spacer } from '../components/spacer';
 
 interface PortfolioPiecePageProps extends React.Props<PortfolioPiecePage> {
   content: PortfolioContent;
   stub: string;
 }
 
-export class PortfolioPiecePage extends React.Component<PortfolioPiecePageProps, {}> {
+export class PortfolioPiecePage extends React.Component<PortfolioPiecePageProps, void> {
   private renderBackground = () => {
     const backgroundClass: string = 'portfolio-background';
 
@@ -27,10 +27,8 @@ export class PortfolioPiecePage extends React.Component<PortfolioPiecePageProps,
   }
 
   render() {
-    const portfolioPieceClass: string = "portfolio-piece";
-
     return (
-      <section className={portfolioPieceClass}>
+      <section className='portfolio-piece'>
         {this.renderBackground()}
 
         <Logo />

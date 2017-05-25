@@ -4,11 +4,11 @@
     @include element('width-container') {
         @include static-width();
         display: flex;
-        z-index: 1;
         position: relative;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        z-index: 1;
 
         @include breakpoint('medium') {
             flex-direction: row;
@@ -36,11 +36,11 @@
 
     @include element('content') {
         @include grid-item(12);
+        height: 25%;
+        position: relative;
+        top: percentage((1-.25) / 2);
         border-left: 1px dashed color('blush');
         border-right: 1px dashed color('blush');
-        height: 25%;
-        top: percentage((1-.25) / 2);
-        position: relative;
     }
 }
 
@@ -67,9 +67,9 @@
 }
 
 @include block('experience-list') {
-    background: color('light-gray');
     @include reset-list();
     padding: 20px;
+    background: color('light-gray');
 
     @include element('item') {
         margin-top: 20px;
