@@ -1,7 +1,7 @@
 import { PortfolioContent } from '../../typings';
 
 export const DropboxBusinessRedesignData: PortfolioContent = {
-  title: "Dropabout Business Redesign",
+  title: "Dropbox Business Redesign",
   subtitle: "Dropbox Business gets a visual overhaul and a first pass at going responsive",
   roles: "Development",
   technologies: [
